@@ -18,11 +18,14 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/react": "^16.0.0",
+    "autoprefixer": "^10.4.19",
+    "babel-jest": "^29.0.0",
+    "css-loader": "^7.1.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "jest": "^29.7.0",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "babel-jest": "^29.0.0"
+    "postcss": "^8.4.40",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.4.7"
   }
 }

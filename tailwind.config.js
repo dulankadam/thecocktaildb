@@ -1,13 +1,17 @@
-/** @type {import('tailwindcss').Config} */
-
+const cssLoader = require('css-loader')
+const { postcss } = require('tailwindcss')
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",    // Scan all .js, .ts, .jsx, .tsx files in the 'app' directory
+    "./components/**/*.{js,ts,jsx,tsx}", // Scan all .js, .ts, .jsx, .tsx files in the 'components' directory
+    "./styles/**/*.css"              // Scan all .css files in the 'styles' directory
+  ],
   theme: {
     extend: {},
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: ['css-loader','postcss-loader'],
 };
+

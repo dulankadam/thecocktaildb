@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useFavorites } from '@/app/context/FavoritesContext';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
+
 const HomePage = () => {
   const [cocktails, setCocktails] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
@@ -55,7 +56,7 @@ const HomePage = () => {
         {cocktails.map(cocktail => (
           <div key={cocktail.idDrink} className="cocktail-item">
             <h2>{cocktail.strDrink}</h2>
-            <p>Category : {cocktail.strCategory}</p>
+            <p className='text-black'>Category : {cocktail.strCategory}</p>
             <button onClick={() => handleAddToFavorites(cocktail)}>Add to Favorites</button>
             <button onClick={() => removeFromFavorites(cocktail.idDrink)}>Remove</button>
             <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
