@@ -11,9 +11,14 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: #f8f9fa;
+    background-color: #03468a;
   }
   
+  header .refresh-button{
+    padding: 10px 30px;
+    border-radius: 5px;
+  }
+
   h1 {
     font-size: 1.5rem;
   }
@@ -21,7 +26,6 @@ body {
   .cocktail-item {
     margin: 1rem 0;
     padding: 1rem;
-    border: 1px solid #ddd;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -34,10 +38,39 @@ body {
     object-fit: cover;
     border-radius: 4px;
   }
-  
+  .favorites-list .cocktail-item {
+    display: block;
+    text-align: center;
+  }
+
+  .favorites-list .cocktail-item img {
+    width: 300px;
+    height: 300px;
+  }
+
   .favorites-list {
     margin: 2rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
+  
+  
+  .cocktails-list .cocktail-item {
+    display: block;
+    text-align: center;
+  }
+
+  .cocktails-list .cocktail-item img {
+    width: 300px;
+    height: 300px;
+  }
+ 
+  .cocktails-list {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
   
   .notification {
     position: fixed;
@@ -49,3 +82,23 @@ body {
     border-radius: 4px;
   }
   
+  .carousel .slide img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.carousel-details{
+  width: 50vw;
+}
+
+.header-Search input, .header-Search button{
+  padding: 10px;
+}
+.back-to-home a {
+  color: #FFFFFF;
+}
+
+.navigation-links a{
+  color: #FFFFFF;
+  display: block;
+}

@@ -5,6 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 import Link from 'next/link';
 import { useFavorites } from '@/app/context/FavoritesContext';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import '../styles/globals.css';
 
 
 const HomePage = () => {
@@ -38,27 +39,37 @@ const HomePage = () => {
   return (
     <div>
       <header>
-        <h1>Random Cocktails</h1>
-        <button onClick={getCocktails}>Refresh</button>
-        <div className="favorites-indicator">
-          Favorites: {favorites.length}
+        <div className='titlebar-details'>
+          <h1>Random Cocktails</h1>
+          <div className="favorites-indicator">
+            Favorites: {favorites.length}
+          </div>
         </div>
-        <Link href="/search">
-          Search Cocktails
-        </Link>
-        <Link href="/favorites">
-          View Favorites
-        </Link>
+        <button className='refresh-button' onClick={getCocktails}>Refresh</button>
+        <div className='navigation-links'>
+          <Link href="/search">
+            Search Cocktails
+          </Link>
+          <Link href="/favorites">
+            View Favorites
+          </Link>
+        </div>
       </header>
 
       {errorMessage && <p>{errorMessage}</p>}
       <Carousel>
         {cocktails.map(cocktail => (
           <div key={cocktail.idDrink} className="cocktail-item">
-            <h2>{cocktail.strDrink}</h2>
-            <p className='text-black'>Category : {cocktail.strCategory}</p>
-            <button onClick={() => handleAddToFavorites(cocktail)}>Add to Favorites</button>
-            <button onClick={() => removeFromFavorites(cocktail.idDrink)}>Remove</button>
+          <div>
+             <div className='carousel-details'>
+              <h2>{cocktail.strDrink}</h2>
+              <p>Category : {cocktail.strCategory}</p>
+              <div className='caresouleButton'>
+                <button onClick={() => handleAddToFavorites(cocktail)}>Add to Favorites</button>
+                <button onClick={() => removeFromFavorites(cocktail.idDrink)}>Remove</button>
+              </div>
+            </div>
+          </div>
             <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
           </div>
         ))}
